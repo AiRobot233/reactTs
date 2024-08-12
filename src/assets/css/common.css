@@ -1,0 +1,22 @@
+.body-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.heard {
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+.content-div {
+    height: calc(100% - 50px);
+    width: 100%;
+}
+
+.search {
+    margin-left: auto;
+    display: flex;
+}
