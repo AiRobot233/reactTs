@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import '@/assets/css/layout.css';
 import {
     MenuUnfoldOutlined,
@@ -27,8 +27,8 @@ const LayoutData = ({children}: { children: any }) => {
     let menu = getLocalStorage('menu');
     menu = replaceIcons(menu)
     const result = findNodeByPath(menu, location.pathname === '/' ? '/home' : location.pathname)
-    let defaultSelectedKeys = []
-    let defaultOpenKeys = []
+    let defaultSelectedKeys: string[] = []
+    let defaultOpenKeys: any[] = []
     if (result !== null) {
         defaultSelectedKeys = [result.key]
         defaultOpenKeys = result?.parKey == null ? [] : [result?.parKey]

@@ -1,5 +1,4 @@
 import * as Icons from "@ant-design/icons";
-import React from "react";
 
 //递归替换图标为组件
 export function replaceIcons(data) {

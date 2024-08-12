@@ -3,7 +3,6 @@ import type {FormProps} from 'antd';
 import {Button, Form, Input} from 'antd';
 import {request} from "@/request/request";
 import {setLocalStorage, setToken} from "@/utils/ts/localStorage";
-import React from "react";
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import {useNavigate} from "react-router-dom";
 import {addRoutes} from "@/router/modules";

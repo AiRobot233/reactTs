@@ -3,7 +3,7 @@ import {
     ReloadOutlined,
 } from '@ant-design/icons';
 import '@/assets/css/common.css';
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {request} from "@/request/request";
 import UserModal from "@/components/user/UserModal.tsx";
 import {Input} from 'antd';
@@ -24,7 +24,7 @@ export default function User() {
     });
 
 
-    const columns = [
+    const columns: any = [
         {
             title: '名称',
             dataIndex: 'name',
@@ -185,7 +185,7 @@ export default function User() {
                         allowClear
                         treeDefaultExpandAll
                         treeData={treeData}
-                        fieldNames={{children: 'children', label: 'name', key: 'id', value: 'id'}}
+                        fieldNames={{children: 'children', label: 'name', value: 'id'}}
                         onChange={onChange}
                     />
                     <Search placeholder="名称/电话搜索" onSearch={onSearch} enterButton
@@ -204,7 +204,7 @@ export default function User() {
                            onChange: pageChange,
                            total: paginationParams.total,
                            showSizeChanger: true,
-                           showTotal: (total) => {
+                           showTotal: (total: string) => {
                                return `共 ${total} 条`
                            }
                        } as (any)}/>

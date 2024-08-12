@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Form, Input, InputNumber, message, Modal, TreeSelect} from 'antd';
 import {request} from "@/request/request";
-import {FormInstance} from "rc-field-form/lib/interface";
 
 
 type FieldType = {
@@ -14,9 +13,9 @@ type FieldType = {
 const DictionaryModal = ({title = '新增', params, visible, onClose}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
-    const [treeData, setTreeData] = useState([]);
+    const [treeData, setTreeData] = useState<any[]>([]);
 
-    const [form] = Form.useForm() as (FormInstance);
+    const [form] = Form.useForm();
 
 
     useEffect(() => {
@@ -90,7 +89,7 @@ const DictionaryModal = ({title = '新增', params, visible, onClose}) => {
                         placeholder="请选择上级"
                         allowClear
                         treeData={treeData}
-                        fieldNames={{children: 'children', label: 'value', key: 'id', value: 'id'}}
+                        fieldNames={{children: 'children', label: 'value', value: 'id'}}
                     />
                 </Form.Item>
 

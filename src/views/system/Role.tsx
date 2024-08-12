@@ -3,7 +3,7 @@ import {
     ReloadOutlined,
 } from '@ant-design/icons';
 import '@/assets/css/common.css';
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {request} from "@/request/request";
 import RoleModal from "@/components/role/RoleModal.tsx";
 
@@ -15,7 +15,7 @@ export default function Role() {
     const [params, setParams] = useState({});
 
 
-    const columns = [
+    const columns: any = [
         {
             title: '名称',
             dataIndex: 'name',

@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Form, Input, message, Modal, Radio, TreeSelect} from 'antd';
 import {request} from "@/request/request";
-import {FormInstance} from "rc-field-form/lib/interface";
 
 
 type FieldType = {
@@ -16,7 +15,7 @@ const UserModal = ({title = '新增', params, visible, onClose}) => {
     const [confirmLoading, setConfirmLoading] = useState(false);
     const [roleData, setRoleData] = useState([]);
 
-    const [form] = Form.useForm() as (FormInstance);
+    const [form] = Form.useForm();
 
 
     useEffect(() => {
@@ -107,7 +106,7 @@ const UserModal = ({title = '新增', params, visible, onClose}) => {
                         allowClear
                         treeDefaultExpandAll
                         treeData={roleData}
-                        fieldNames={{children: 'children', label: 'name', key: 'id', value: 'id'}}
+                        fieldNames={{children: 'children', label: 'name', value: 'id'}}
                     />
                 </Form.Item>
 

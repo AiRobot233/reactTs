@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Form, Input, message, Modal, Tree, TreeSelect} from 'antd';
 import {request} from "@/request/request";
 import {getAllIdsUnderNode, getAllRelatedIds} from "@/utils/ts/utils.ts";
-import {FormInstance} from "rc-field-form/lib/interface";
 
 
 type FieldType = {
@@ -18,7 +17,7 @@ const RoleModal = ({title = '新增', params, visible, onClose}) => {
     const [ruleData, setRuleData] = useState([]);
     const [checkedKeys, setCheckedKeys] = useState(params?.rule ? params?.rule.split(',').map((element) => parseInt(element)) : []);
 
-    const [form] = Form.useForm() as (FormInstance);
+    const [form] = Form.useForm();
 
 
     useEffect(() => {
@@ -71,7 +70,7 @@ const RoleModal = ({title = '新增', params, visible, onClose}) => {
 
     //手动选中数据
     const check = (checkedKeys: any, e: any) => {
-        let data = []
+        let data: any = []
         if (e.checked) {
             //合并数组
             const children = getAllRelatedIds(ruleData, e.node.id)
@@ -122,7 +121,7 @@ const RoleModal = ({title = '新增', params, visible, onClose}) => {
                         allowClear
                         treeDefaultExpandAll
                         treeData={treeData}
-                        fieldNames={{children: 'children', label: 'name', key: 'id', value: 'id'}}
+                        fieldNames={{children: 'children', label: 'name', value: 'id'}}
                     />
                 </Form.Item>
 

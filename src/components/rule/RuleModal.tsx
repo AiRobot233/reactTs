@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Form, Input, message, Modal, Select, TreeSelect} from 'antd';
 import {request} from "@/request/request";
 
@@ -91,7 +91,7 @@ const RuleModal = ({title = '新增', params, visible, onClose}) => {
                         allowClear
                         treeDefaultExpandAll
                         treeData={treeData}
-                        fieldNames={{children: 'children', label: 'name', key: 'id', value: 'id'}}
+                        fieldNames={{children: 'children', label: 'name', value: 'id'}}
                     />
                 </Form.Item>
 
