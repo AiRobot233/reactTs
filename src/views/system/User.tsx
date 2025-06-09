@@ -181,7 +181,7 @@ export default function User() {
                         style={{width: '180px', marginRight: '10px'}}
                         treeNodeFilterProp="name"
                         showSearch
-                        placeholder="请选择上级"
+                        placeholder="请选择角色搜索"
                         allowClear
                         treeDefaultExpandAll
                         treeData={treeData}

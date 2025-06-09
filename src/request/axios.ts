@@ -1,6 +1,6 @@
 import axios from "axios";
 import {message} from "antd";
-import {getToken} from "@/utils/ts/localStorage";
+import {getToken, removeToken} from "@/utils/ts/localStorage";
 
 
 // 创建axios实例
@@ -43,6 +43,10 @@ http.interceptors.response.use(
         }
         if (error.response.status === 401) {
             message.error('登录已失效，请重新登录！')
+            // 清除登录状态
+            removeToken();
+            // 跳转到登录页
+            window.location.href = '/login';
         }
         if (error.response.status === 412) {
             message.error(error.response.data.message)

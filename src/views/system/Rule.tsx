@@ -116,7 +116,7 @@ export default function Rule() {
                 <Button type="primary" onClick={reload} icon={<ReloadOutlined/>} style={{marginLeft: '10px'}}/>
             </div>
             <div className="content-div">
-                <Table columns={columns} dataSource={dataSource} rowKey="id" loading={loading}/>
+                <Table columns={columns} dataSource={dataSource} rowKey="id" loading={loading} pagination={false}/>
             </div>
 
             {isModalVisible &&

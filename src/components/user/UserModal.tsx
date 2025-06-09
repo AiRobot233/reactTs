@@ -6,8 +6,9 @@ import {request} from "@/request/request";
 type FieldType = {
     name?: string;
     phone?: string;
-    role_id?: string;
+    roleId?: string;
     status?: number;
+    password?: string;
 };
 
 const UserModal = ({title = '新增', params, visible, onClose}) => {
@@ -88,7 +89,7 @@ const UserModal = ({title = '新增', params, visible, onClose}) => {
                 <Form.Item<FieldType>
                     label="电话"
                     name="phone"
-                    rules={[{required: true, message: '请输入电话'}]}
+                    rules={[{required: false}]}
                 >
                     <Input placeholder="请输入电话"/>
                 </Form.Item>
@@ -96,7 +97,7 @@ const UserModal = ({title = '新增', params, visible, onClose}) => {
 
                 <Form.Item<FieldType>
                     label="角色组"
-                    name="role_id"
+                    name="roleId"
                     rules={[{required: true, message: '请选择角色组'}]}
                 >
                     <TreeSelect
@@ -108,6 +109,14 @@ const UserModal = ({title = '新增', params, visible, onClose}) => {
                         treeData={roleData}
                         fieldNames={{children: 'children', label: 'name', value: 'id'}}
                     />
+                </Form.Item>
+
+                <Form.Item<FieldType>
+                    label="密码"
+                    name="password"
+                    rules={[{required: false}]}
+                >
+                    <Input placeholder={!params?.id ? '不填写为默认密码123456@Aa' : '不填写为不修改密码！'}/>
                 </Form.Item>
 
                 <Form.Item<FieldType>

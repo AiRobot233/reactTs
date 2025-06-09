@@ -10,6 +10,7 @@ import {replaceIcons} from "@/utils/tsx/utils.tsx";
 import {findNodeByPath, findPathByKey} from "@/utils/ts/menu.ts";
 import {useLocation, useNavigate} from "react-router-dom";
 import EditPasswordModal from "@/components/layout/EditPasswordModal.tsx";
+import {getEnvData} from "@/utils/ts/utils.ts";
 
 const {Header, Sider, Content} = Layout;
 
@@ -33,6 +34,9 @@ const LayoutData = ({children}: { children: any }) => {
         defaultSelectedKeys = [result.key]
         defaultOpenKeys = result?.parKey == null ? [] : [result?.parKey]
     }
+
+    //获取配置文件信息
+    const envTitle = getEnvData('VITE_APP_TITLE')
 
     //点击事件
     const onClick = (e) => {
@@ -78,8 +82,8 @@ const LayoutData = ({children}: { children: any }) => {
         <>
             <Layout style={{width: '100%', height: '100%'}}>
                 <Sider trigger={null} collapsible collapsed={collapsed}>
-                    <div className="logo" title="测试站点">
-                        测试站点
+                    <div className="logo" title={envTitle}>
+                        {envTitle}
                     </div>
                     <Menu
                         theme="dark"

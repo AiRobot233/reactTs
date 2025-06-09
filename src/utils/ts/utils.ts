@@ -76,3 +76,8 @@ export function getAllRelatedIds(tree: TreeNode[], targetId: string): any {
 
     return [...childIds, ...parentIds];
 }
+
+//获取env信息
+export function getEnvData(key: string): string {
+    return import.meta.env[key];
+}
